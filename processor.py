@@ -56,7 +56,9 @@ class Processor:
         self.is_available = False
         
         # Record start time if this is the first time executing
-
+        if process.has_started() == False:
+            
+            process.start_time = None # seen and checked in execute cycles
         
         return True
         
@@ -86,6 +88,10 @@ class Processor:
             self.release_current_process()
             return None
         
+        # Set start time to current time on first execution
+        if self.current_process.has_started() == None:
+            self.current_process.start_time == current_time
+        
         # Now we can execute one unit time of work
         self.current_process.remaining_cycles -= self.speed
         
@@ -110,7 +116,7 @@ class Processor:
         pass
     
     
-    def is_idle() -> bool:
+    def is_idle(self) -> bool:
         
         """
         Checks if processor is free/idle.
@@ -131,6 +137,9 @@ class Processor:
         @param process - The process we are checking
         @return boolean - True if process memory <= memory_capacity. False otherwise.
         """
+        
+        if process == None:
+            return False
         
         return process.memory_bytes <= self.memory_capacity
                 
@@ -176,3 +185,14 @@ class Processor:
         
         
         pass
+    
+    
+    
+    
+    
+if __name__ == "__main__":
+    
+    
+    
+    
+    pass

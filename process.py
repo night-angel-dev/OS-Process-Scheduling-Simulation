@@ -62,9 +62,23 @@ class Process:
         return self.start_time != None
         
     
-        
+
+
     
     
     
-        
+# Quick tests
+if __name__ == "__main__":
     
+    print("Test 1: Create a Process")
+    p1 = Process(1, 100, 512, 0 )
+    print(f"Created PID: {p1.pid}, (cycles required/burst time = {p1.cpu_cycles}, memory requirements = {p1.memory_bytes})")
+    print(f"Arrival time: {p1.arrival_time}, remaining cycles: {p1.remaining_cycles}")
+    print(f"Has started? {p1.has_started()}, should be false")
+    print(f"Is complete? {p1.is_complete()}, should be false\n")
+    
+    
+    
+    print("Test 2: ")
+    
+    pass
