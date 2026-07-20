@@ -1,5 +1,6 @@
 """
 config.py - Global parameteres for the simulator
+
 """
 
 NUM_PROCESSES: int = 250
