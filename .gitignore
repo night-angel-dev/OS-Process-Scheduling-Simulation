@@ -1,0 +1,5 @@
+**/.direnv/
+
+# python shiz
+**/**/__pycache__/
+*.csv
